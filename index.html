@@ -1,0 +1,86 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="color-scheme" content="dark light">
+  <meta name="referrer" content="no-referrer">
+  
+  <meta http-equiv="Content-Security-Policy" content="default-src 'none'; script-src 'self'; connect-src 'self'; style-src 'unsafe-inline'; form-action 'none'; base-uri 'none'">
+  <script type="module" src="./export.mjs"></script>
+  
+  <title>RXP Forever | Guide export</title>
+  <style>
+    :root { color-scheme: dark; font-family: system-ui, sans-serif; background: #11151b; color: #eef0f4; }
+    * { box-sizing: border-box; }
+    body { margin: 0; padding: 48px 20px; }
+    main { max-width: 600px; margin: 0 auto; }
+    .eyebrow { color: #e5b862; font-size: .8rem; font-weight: 650; letter-spacing: .12em; text-transform: uppercase; }
+    h1 { margin: 12px 0; font-size: clamp(2rem, 7vw, 2.8rem); letter-spacing: -.04em; }
+    p { color: #b6bfcb; line-height: 1.6; }
+    form { margin-top: 28px; padding: 26px; border: 1px solid #35404e; border-radius: 14px; background: #1a212b; }
+    label { display: block; margin-bottom: 9px; font-weight: 600; }
+    input { width: 100%; min-height: 46px; padding: 11px 12px; border: 1px solid #556170; border-radius: 7px; background: #11151b; color: inherit; font: inherit; }
+    a { color: inherit; }
+    input:focus-visible, button:focus-visible, summary:focus-visible, a:focus-visible { outline: 3px solid #e5b862; outline-offset: 3px; }
+    .hint { margin: 8px 0 0; font-size: .85rem; color: #aeb9c8; }
+    button { width: 100%; margin-top: 26px; min-height: 48px; border: 0; border-radius: 7px; background: #e5b862; color: #17120a; font: inherit; font-weight: 700; cursor: pointer; }
+    button:hover { background: #f2cb84; }
+    button:disabled { opacity: .6; cursor: wait; }
+    .error { margin: 22px 0; padding: 16px; border: 1px solid #dc8c8c; border-radius: 9px; background: #3a2025; }
+    .error p { margin: 6px 0 0; color: #ffe1e1; overflow-wrap: anywhere; }
+    details { margin-top: 24px; color: #b6bfcb; }
+    summary { cursor: pointer; color: #eef0f4; }
+    footer { margin-top: 28px; font-size: .8rem; color: #aeb9c8; line-height: 1.6; }
+    @media (max-width: 420px) { body { padding: 28px 16px; } form { padding: 20px; } }
+    @media (prefers-color-scheme: light) {
+      :root { color-scheme: light; background: #f4f3ef; color: #18212c; }
+      .eyebrow { color: #835605; }
+      p, .hint, details, footer { color: #4e5c6d; }
+      form { background: #fff; border-color: #c5cbd3; }
+      input { background: #fafafa; border-color: #7b8796; }
+      summary { color: #18212c; }
+      .error { background: #fff0f0; border-color: #ac3b3b; }
+      .error p { color: #7c1f1f; }
+    }
+  </style>
+</head>
+<body>
+  <main>
+    <header>
+      <div class="eyebrow">WoW: Forever</div>
+      <h1>All Forever guides</h1>
+      <p>Enter your BattleTag to download all 107 published English guide entries from the official Forever package.</p>
+      <p>No upload or original BattleTag is required.</p>
+    </header>
+    
+    <div id="export-error" class="error" role="alert" hidden>
+      <strong>Cannot create the export.</strong>
+      <p id="error-message"></p>
+    </div>
+    
+    <form id="export-form" >
+      <label for="battletag">Your BattleTag</label>
+      <input id="battletag"  type="text" value="" placeholder="Name#1234" maxlength="256" autocomplete="off" autocapitalize="none" spellcheck="false" required aria-describedby="tag-hint">
+      <p class="hint" id="tag-hint">Use the BattleTag for your WoW account.</p>
+      <button type="submit" disabled>Download all Forever guides</button>
+      <noscript><p class="hint">Enable JavaScript to create the export in your browser.</p></noscript>
+      <p class="hint">Open rxp-forever.txt and import its text into RestedXP in WoW: Forever.</p>
+    </form>
+    <details>
+      <summary>Included guides</summary>
+      <p>The bundle contains every named guide from the English Forever manifest in the complete CurseForge release, RestedXP v4.11.26.</p>
+      <p>It includes both factions, Skyborne routes, dungeon routes, Mage/AoE variants, and the SurvivalGuide entries that the Forever manifest loads.</p>
+      <p>The addon applies the faction, race, class, and mode conditions in each guide.</p>
+    </details>
+    <footer>
+      
+      Your BattleTag stays in your browser. The site does not upload it or save it.
+      
+      Guide content by RestedXP and contributors, under
+      <a href="./guide-license.txt">CC BY-NC-SA 4.0 (license and source)</a>.
+      The app has no affiliation with RestedXP or Blizzard.
+    </footer>
+  </main>
+</body>
+</html>
